@@ -9,13 +9,16 @@
     <script src="react-dom.development.js"></script>
     <script type="text/babel">
         const Greeter = () => {
+            const [msg, setMsg] = React.useState('[default message]');
+
             const onBtnGreetClick = () => {
-                console.log('Greet button clicked')
+                setMsg('Greet button clicked')
             }
             return (
                 <div>
                 <h1>Greeter</h1>
                 <button onClick={onBtnGreetClick}>Greet</button>
+                <div>{msg}</div>
                 </div>
             )
         }
