@@ -10,13 +10,21 @@
     <script type="text/babel">
         const Greeter = () => {
             const [msg, setMsg] = React.useState('[default message]');
+            const [userName, setUserName] = React.useState('');
 
             const onBtnGreetClick = () => {
-                setMsg('Greet button clicked')
+                setMsg('Hi ' + userName + ', Have a nice day!')
             }
+
+            const onTxtUserNameChange = (e) => {
+                setUserName(e.target.value)
+            }
+
             return (
                 <div>
                 <h1>Greeter</h1>
+                <label htmlFor="">User Name :</label>
+                <input type="text" onChange={onTxtUserNameChange}/>
                 <button onClick={onBtnGreetClick}>Greet</button>
                 <div>{msg}</div>
                 </div>
